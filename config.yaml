@@ -1,0 +1,15 @@
+version: 1
+
+name: "Ez Web Test Website"
+
+port: 8080
+domain:
+  - test.ez.xpo.dev
+  - test2.ez.xpo.dev
+
+env:
+  - name: ENV
+    value: "dev"
+  - name: DATABASE_URL
+    value: "mysql+pymsql://root:xxxx@xxxxxxxxx:3306/test"
+

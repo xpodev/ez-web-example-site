@@ -1,0 +1,5 @@
+name: Test Plugin
+version: 1.0.1
+installer_id: ez.plugins.installer
+package_name: test-plugin
+author: EZ Test Plugins
