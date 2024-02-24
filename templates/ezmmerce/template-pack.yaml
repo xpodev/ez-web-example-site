@@ -1,0 +1,13 @@
+name: ezmmerce
+title: EZ E-Commerce Template
+version: 1.0.0
+author: "Ez Web"
+description: "Ez Web Test Template"
+root: pages
+mappings:
+  product: product_page
+  admin:
+    root: admin
+    mappings:
+      products: products_list
+        
