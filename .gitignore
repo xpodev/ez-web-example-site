@@ -160,3 +160,6 @@ cython_debug/
 #.idea/
 
 .lh/
+site.yaml
+
+node_modules/

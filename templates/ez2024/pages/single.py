@@ -1,21 +1,20 @@
 from jsx.html import *
+from jsx.styling import *
 from ez.jsx import *
-from ez.database.models.page import PageModel
+
+from ez.templates import template
+from ez.jsx import Card
+import ez
+
+def render(page):
+    return SinglePage(page).render()
 
 
-def render(**props):
-    return Page(
-        SinglePage(
-            **props,
-        ),
-    )
-
-
-class SinglePage(Page):
-    def __init__(self, page: PageModel):
+class SinglePage:
+    def __init__(self, page):
         self.page = page
 
-    def body(self):
+    def render(self):
         return Div(
             H1(
                 self.page.title,
@@ -27,10 +26,19 @@ class SinglePage(Page):
                 style=Style(
                     {
                         "background-color": Color.CORNFLOWER_BLUE,
+<<<<<<< HEAD
                         "color": "white",
+=======
+>>>>>>> 9eba15f (Add ez2024 template)
                         "padding": "10px",
                         "font-family": "sans-serif",
                     }
                 ),
             ),
+<<<<<<< HEAD
+=======
+            Div(
+                "Your Query: " + ez.request.query_params.get("query", ""),
+            )
+>>>>>>> 9eba15f (Add ez2024 template)
         )
