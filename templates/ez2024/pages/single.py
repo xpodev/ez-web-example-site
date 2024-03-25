@@ -2,11 +2,11 @@ from jsx.html import *
 from jsx.styling import *
 from ez.jsx import *
 
-from ez.templates import template
+from ez.templates import template, PageData
 from ez.jsx import Card
 import ez
 
-def render(page):
+def render(page: PageData):
     return SinglePage(page).render()
 
 
@@ -26,19 +26,13 @@ class SinglePage:
                 style=Style(
                     {
                         "background-color": Color.CORNFLOWER_BLUE,
-<<<<<<< HEAD
                         "color": "white",
-=======
->>>>>>> 9eba15f (Add ez2024 template)
                         "padding": "10px",
                         "font-family": "sans-serif",
                     }
                 ),
             ),
-<<<<<<< HEAD
-=======
-            Div(
-                "Your Query: " + ez.request.query_params.get("query", ""),
-            )
->>>>>>> 9eba15f (Add ez2024 template)
+            # Div(
+            #     "Your Query: " + ez.request.query_params.get("query", ""),
+            # )
         )
