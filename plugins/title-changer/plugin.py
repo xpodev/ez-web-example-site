@@ -14,27 +14,27 @@ import ez.plugins
 #     page.title = "EZ Web - Blah"
 
 
-@ez.get("/title")
+@ez.site.get("/title")
 def index():
     print("Hello, World!")
     return "<h1>Hello, World!</h1>"
 
 
-@ez.get("/api/plugins/{plugin_id}/enable")
+@ez.site.get("/api/plugins/{plugin_id}/enable")
 def enable_plugin(plugin_id: str):
     print(f"Enabling plugin {plugin_id}...")
     ez.plugins.enable_plugin(plugin_id)
     return "Plugin enabled!"
 
 
-@ez.get("/api/plugins/{plugin_id}/disable")
+@ez.site.get("/api/plugins/{plugin_id}/disable")
 def disable_plugin(plugin_id: str):
     print(f"Disabling plugin {plugin_id}...")
     ez.plugins.disable_plugin(plugin_id)
     return "Plugin disabled!"
 
 
-@ez.get("/api/plugins")
+@ez.site.get("/api/plugins")
 def get_plugins():
     print("Getting plugins...")
     return [
@@ -42,7 +42,7 @@ def get_plugins():
     ]
 
 
-@ez.get("/exc/{exc_type}")
+@ez.site.get("/exc/{exc_type}")
 def raise_exc(exc_type: str):
     raise {
         "ValueError": ValueError,
@@ -102,6 +102,13 @@ def raise_exc(exc_type: str):
         "ChildProcessError": ChildProcessError,
         "ConnectionError": ConnectionError,
     }[exc_type]("This is a test exception!")
+
+
+@ez.events.on("test")
+def test_event(data):
+    print(f"Test event: {data}")
+    print(ez.lowlevel.APP_HOST.current_application.oid)
+
 
 def main():
     from . import test
