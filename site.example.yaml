@@ -1,0 +1,20 @@
+version: 1 # Version of the website configuration
+
+name: My EZ Website # Name of the website
+
+port: 8080 # Port to run the website on
+domain: # Domain names for the website
+  - example.com
+
+app-env: development # Application environment (development, production)
+database:
+  - name: mysql # Connection name
+    prefix: # Prefix for the database tables
+    uri: mysql+pymsql://root:xxxx@xxxxxxxxx:3306/test # Database connection string
+
+  - name: postgres
+    database: test # Database name
+    username: test # Database username
+    password: test # Database password
+    host: db.example.com # Database host
+    port: 5432 # Database port
