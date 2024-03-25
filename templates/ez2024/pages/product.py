@@ -1,6 +1,7 @@
 from sqlalchemy import Column, String, Integer, Float
 
 import ez
+import ez.lowlevel
 
 from jsx.html import *
 from ez.jsx import *
@@ -12,7 +13,7 @@ from ez.database.model import Model
 from fastapi.staticfiles import StaticFiles
 
 resources_path = ez.SITE_DIR / "resources" / "images"
-ez._app.mount("/res/i", StaticFiles(directory=f"{resources_path}"), name="res")
+ez.lowlevel.WEB_APP.mount("/res/i", StaticFiles(directory=f"{resources_path}"), name="res")
 
 class ProductImage(Model):
     __table_name__ = "eco_product_images"
