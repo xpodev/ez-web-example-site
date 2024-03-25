@@ -1,0 +1,12 @@
+version: 1
+
+name: "Ez Web Test Website"
+
+port: 8080
+domain:
+  - test.ez.xpo.dev
+  - test2.ez.xpo.dev
+
+database: 
+  uri: mysql+pymysql://ezwebadmin:NHi_RmX*ERyNlb3+@51.16.217.222:3306/ezweb
+  prefix: ez_
